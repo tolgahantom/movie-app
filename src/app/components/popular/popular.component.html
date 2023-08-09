@@ -1,0 +1,16 @@
+<div class="popular-page">
+  <div class="movies">
+    <div
+      class="movie-card"
+      routerLink="/movie/{{ movie.id }}"
+      *ngFor="let movie of populerMovies"
+    >
+      <div class="movie-card-img">
+        <img src="{{ imagePath + movie.poster_path }}" />
+      </div>
+      <div class="movie-card-detail">
+        <div class="movie-name">{{ movie.original_title }}</div>
+      </div>
+    </div>
+  </div>
+</div>

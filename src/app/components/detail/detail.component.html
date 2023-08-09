@@ -1,0 +1,89 @@
+<div class="detail-page">
+  <div class="detail-page-header container">
+    <a routerLink="/" class="back-icon">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <p class="search-title">Detail</p>
+
+    <a
+      (click)="addToWatchList(selectedMovie.id)"
+      class="watch-list-icon"
+      *ngIf="!inWatchList"
+    >
+      <i class="fa-regular fa-bookmark"></i>
+    </a>
+
+    <a
+      class="watch-list-icon"
+      (click)="removeFromWatchList(selectedMovie.id)"
+      *ngIf="inWatchList"
+    >
+      <i class="fa-solid fa-bookmark"></i>
+    </a>
+  </div>
+  <div class="detail-banner">
+    <div class="detail-background-image">
+      <img
+        src="{{ imagePath + selectedMovie.backdrop_path }}"
+        *ngIf="selectedMovie.backdrop_path"
+      />
+    </div>
+    <div class="detail-movie-profile container">
+      <div class="detail-movie-profile-img">
+        <img
+          src="{{ imagePath + selectedMovie.poster_path }}"
+          *ngIf="selectedMovie.poster_path"
+        />
+      </div>
+      <div class="detail-movie-profile-title">
+        {{ selectedMovie.original_title }}
+      </div>
+    </div>
+    <div class="detail-movie-infos container">
+      <div class="detail-movie-info">
+        <i class="fa-solid fa-calendar"></i>
+        <p>{{ movieDate }}</p>
+      </div>
+      <div class="detail-movie-info border">
+        <i class="fa-solid fa-star"></i>
+        <p>{{ selectedMovie.vote_average.toFixed(1) }}</p>
+      </div>
+      <div class="detail-movie-info">
+        <i class="fa-solid fa-ticket"></i>
+        <p>{{ findGenre(selectedMovie.genres[0]) }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="detail-components container">
+    <li
+      class="detail-component-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        routerLink="/movie/{{ selectedMovie.id }}/"
+        class="detail-component-link"
+        >About Movie</a
+      >
+    </li>
+    <li class="detail-component-item" routerLinkActive="active">
+      <a
+        routerLink="/movie/{{ selectedMovie.id }}/reviews"
+        class="detail-component-link"
+        >Reviews</a
+      >
+    </li>
+    <li class="detail-component-item" routerLinkActive="active">
+      <a
+        routerLink="/movie/{{ selectedMovie.id }}/cast"
+        class="detail-component-link"
+        >Cast</a
+      >
+    </li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

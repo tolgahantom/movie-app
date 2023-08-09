@@ -1,0 +1,148 @@
+.search-page {
+  padding: 10px 20px;
+  padding-bottom: 100px;
+}
+
+.search-bar {
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-size: 18px;
+  background-color: #3a3f47;
+  position: relative;
+  margin-top: 20px;
+}
+
+.search-bar #search {
+  width: calc(100% - 50px);
+  outline: none;
+  border: none;
+  background-color: #3a3f47;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: inherit;
+  margin-left: 10px;
+}
+
+.search-bar #search::placeholder {
+  color: var(--light);
+}
+
+.search-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.info-icon {
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.searched-movies {
+  margin-top: 20px;
+}
+
+.searched-movie-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.searched-movie-card-title {
+  font-size: 18px;
+}
+
+.searched-movie-card-img {
+  background-color: red;
+  width: 35%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.searched-movie-card-img img {
+  width: 100%;
+}
+
+.searched-movie-card-detail {
+  width: 60%;
+}
+
+.searched-movie-card-info.orange {
+  color: #ff8700;
+}
+
+.searched-movie-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 7px;
+}
+
+.searched-movie-card-info p {
+  margin-left: 5px;
+}
+
+.noMovies {
+  width: 100%;
+  height: 100%;
+  padding-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.noMovies-icon {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.noMovies-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.noMovies-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #8a8a8a;
+}
+
+@media (min-width: 600px) {
+  .search-bar {
+    font-size: 22px;
+  }
+
+  .search-page-header {
+    font-size: 22px;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .searched-movie-card {
+    font-size: 18px;
+  }
+
+  .searched-movie-card-title {
+    font-size: 22px;
+  }
+
+  .searched-movie-card-img {
+    height: 250px;
+  }
+}

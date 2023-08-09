@@ -1,0 +1,72 @@
+<div class="search-page">
+  <div class="search-page-header">
+    <a routerLink="/" class="back-icon">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <p class="search-title">Search</p>
+
+    <a routerLink="/" class="info-icon">
+      <i class="fa-solid fa-info"></i>
+    </a>
+  </div>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search"
+      #search
+      (keyup.enter)="searchMovie(search.value)"
+    />
+    <i class="fa-solid fa-search" (click)="searchMovie(search.value)"></i>
+  </div>
+
+  <div class="searched-movies" *ngIf="couldFind; else noMovies">
+    <div class="searched-movie-card" *ngFor="let movie of searchedMovies">
+      <div class="searched-movie-card-img" routerLink="/movie/{{ movie.id }}">
+        <img
+          src="https://aeroclub-issoire.fr/wp-content/uploads/2020/05/image-not-found.jpg"
+          alt=""
+          *ngIf="!movie.poster_path"
+        />
+        <img src="{{ imagePath + movie.poster_path }}" />
+      </div>
+      <div class="searched-movie-card-detail">
+        <h3 class="searched-movie-card-title">{{ movie.original_title }}</h3>
+        <div class="searched-movie-card-infos">
+          <div
+            class="searched-movie-card-info orange"
+            *ngIf="movie.vote_average"
+          >
+            <i class="fa-solid fa-star"></i>
+            <p>{{ movie.vote_average.toFixed(1) }}</p>
+          </div>
+          <div
+            class="searched-movie-card-info"
+            *ngIf="movie.genre_ids.length > 0"
+          >
+            <i class="fa-solid fa-ticket"></i>
+            <p>{{ getGenreById(movie.genre_ids[0]).name }}</p>
+          </div>
+          <div class="searched-movie-card-info" *ngIf="movie.release_date">
+            <i class="fa-solid fa-calendar"></i>
+            <p>{{ findYear(movie.release_date) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noMovies>
+  <div class="noMovies">
+    <div class="noMovies-icon">
+      <i class="fa-solid fa-search"></i>
+    </div>
+    <div class="noMovies-title">We Are Sorry, We Can Not Find The Movie :(</div>
+    <div class="noMovies-subtitle">
+      Find your movie by Type title, categories, years, etc
+    </div>
+  </div>
+</ng-template>

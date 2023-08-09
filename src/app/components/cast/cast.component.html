@@ -1,0 +1,17 @@
+<div class="cast-page">
+  <div class="casts">
+    <div class="cast-card" *ngFor="let cast of casts">
+      <div class="cast-image">
+        <i
+          class="fa-solid fa-user undefined-image"
+          *ngIf="cast.profile_path == null"
+        ></i>
+        <img
+          src="{{ imagePath + cast.profile_path }}"
+          *ngIf="cast.profile_path != null"
+        />
+      </div>
+      <div class="cast-name">{{ cast.name }}</div>
+    </div>
+  </div>
+</div>

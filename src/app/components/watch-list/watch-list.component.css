@@ -1,0 +1,101 @@
+.watch-list-page {
+  padding: 10px 20px;
+  padding-bottom: 100px;
+}
+
+.watch-list-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+
+.watch-title {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.info-icon {
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.watch-movies {
+  margin-top: 30px;
+}
+
+.watch-movie-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.watch-movie-card-title {
+  font-size: 18px;
+}
+
+.watch-movie-card-img {
+  background-color: red;
+  width: 35%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.watch-movie-card-img img {
+  width: 100%;
+}
+
+.watch-movie-card-detail {
+  width: 60%;
+}
+
+.watch-movie-card-info.orange {
+  color: #ff8700;
+}
+
+.watch-movie-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 7px;
+}
+
+.watch-movie-card-info p {
+  margin-left: 5px;
+}
+
+@media (min-width: 600px) {
+  .search-bar {
+    font-size: 22px;
+  }
+
+  .search-page-header {
+    font-size: 22px;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .watch-movie-card {
+    font-size: 18px;
+  }
+
+  .watch-movie-card-title {
+    font-size: 22px;
+  }
+
+  .watch-movie-card-img {
+    height: 250px;
+  }
+}
