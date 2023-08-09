@@ -78,4 +78,13 @@
   .categories {
     font-size: 18px;
   }
+
+  .swiper {
+    height: 550px;
+    width: 400px;
+  }
+
+  .swiper img {
+    height: 550px;
+  }
 }
