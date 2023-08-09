@@ -33,7 +33,9 @@
         <img src="{{ imagePath + movie.poster_path }}" />
       </div>
       <div class="searched-movie-card-detail">
-        <h3 class="searched-movie-card-title">{{ movie.original_title }}</h3>
+        <div routerLink="/movie/{{ movie.id }}">
+          <h3 class="searched-movie-card-title">{{ movie.original_title }}</h3>
+        </div>
         <div class="searched-movie-card-infos">
           <div
             class="searched-movie-card-info orange"

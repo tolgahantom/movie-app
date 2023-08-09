@@ -13,7 +13,9 @@
         <img src="{{ imagePath + movie.poster_path }}" />
       </div>
       <div class="watch-movie-card-detail">
-        <h3 class="watch-movie-card-title">{{ movie.original_title }}</h3>
+        <div routerLink="/movie/{{ movie.id }}">
+          <h3 class="watch-movie-card-title">{{ movie.original_title }}</h3>
+        </div>
         <div class="watch-movie-card-infos">
           <div class="watch-movie-card-info orange">
             <i class="fa-solid fa-star"></i>
