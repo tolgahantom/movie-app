@@ -29,13 +29,16 @@
 }
 
 .slider {
-  height: 350px;
-  width: 100%;
   margin-top: 20px;
-  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 350px;
+  width: 250px;
+  overflow: hidden;
 }
 
-.carousel img {
+.slider img {
   height: 100%;
 }
 
