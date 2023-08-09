@@ -12,22 +12,14 @@
     <i class="fa-solid fa-search"></i>
   </div>
 
-  <div class="slider">
-    <ngb-carousel class="swiper">
-      <ng-template ngbSlide class="swipe-img">
-        <img
-          src="  https://lumiere-a.akamaihd.net/v1/images/p_disneymovies_avatarthewayofwater_streamingupdate_2096_0908fa1b.jpeg"
-          alt="Slide 1"
-        />
-      </ng-template>
-      <ng-template ngbSlide class="swipe-img">
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BYzFhM2M1MDUtNDhmNC00YzEzLThiMzctYWYxZTc0MGJhNWYyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg"
-          alt="Slide 2"
-        />
-      </ng-template>
-    </ngb-carousel>
-  </div>
+  <ngb-carousel class="swiper">
+    <ng-template ngbSlide class="swipe-img" *ngFor="let movie of sliderMovies">
+      <img
+        src="{{ imagePath + movie.poster_path }}"
+        routerLink="/movie/{{ movie.id }}"
+      />
+    </ng-template>
+  </ngb-carousel>
 
   <ul class="categories">
     <li
