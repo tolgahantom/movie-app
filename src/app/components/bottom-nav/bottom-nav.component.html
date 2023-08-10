@@ -1,7 +1,7 @@
 <div class="bottom-nav">
   <div class="icons active">
     <div
-      routerLink="/"
+      [routerLink]="['/']"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       class="icon"
@@ -10,7 +10,7 @@
       <a>Home</a>
     </div>
     <div
-      routerLink="/search"
+      [routerLink]="['/search']"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       class="icon"
@@ -19,7 +19,7 @@
       <a>Search</a>
     </div>
     <div
-      routerLink="/watch-list"
+      [routerLink]="['/watch-list']"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       class="icon"

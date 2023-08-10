@@ -16,7 +16,7 @@
     <ng-template ngbSlide class="swipe-img" *ngFor="let movie of sliderMovies">
       <img
         src="{{ imagePath + movie.poster_path }}"
-        routerLink="/movie/{{ movie.id }}"
+        [routerLink]="['/movie', movie.id]"
       />
     </ng-template>
   </ngb-carousel>
@@ -27,16 +27,16 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      <a routerLink="/" class="category-link">Now Playing</a>
+      <a [routerLink]="['/']" class="category-link">Now Playing</a>
     </li>
     <li class="category-item" routerLinkActive="active">
-      <a routerLink="/upcoming" class="category-link">Upcoming</a>
+      <a [routerLink]="['/upcoming']" class="category-link">Upcoming</a>
     </li>
     <li class="category-item" routerLinkActive="active">
-      <a routerLink="/top-rated" class="category-link">Top Rated</a>
+      <a [routerLink]="['/top-rated']" class="category-link">Top Rated</a>
     </li>
     <li class="category-item" routerLinkActive="active">
-      <a routerLink="/popular" class="category-link">Popular</a>
+      <a [routerLink]="['/popular']" class="category-link">Popular</a>
     </li>
   </ul>
 

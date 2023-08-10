@@ -9,11 +9,11 @@
 
   <div class="watch-movies" *ngIf="watchList.length > 0 && watchList">
     <div class="watch-movie-card" *ngFor="let movie of watchList">
-      <div class="watch-movie-card-img" routerLink="/movie/{{ movie!.id }}">
+      <div class="watch-movie-card-img" [routerLink]="['/movie', movie.id]">
         <img src="{{ imagePath + movie.poster_path }}" />
       </div>
       <div class="watch-movie-card-detail">
-        <div routerLink="/movie/{{ movie.id }}">
+        <div [routerLink]="['/movie', movie.id]">
           <h3 class="watch-movie-card-title">{{ movie.original_title }}</h3>
         </div>
         <div class="watch-movie-card-infos">

@@ -9,7 +9,7 @@
     <div class="movies" *ngIf="!loading">
       <div
         class="movie-card"
-        routerLink="/movie/{{ movie.id }}"
+        [routerLink]="['/movie', movie.id]"
         *ngFor="let movie of upComingMovies"
       >
         <div class="movie-card-img">
