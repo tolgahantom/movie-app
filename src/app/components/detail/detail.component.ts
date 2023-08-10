@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { MovieServices } from 'src/app/services/movie.service';
-import { Location } from '@angular/common';
 import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
@@ -32,7 +31,6 @@ export class DetailComponent implements OnInit {
         ? (this.inWatchList = true)
         : (this.inWatchList = false);
 
-      this.movieService.getWatchlistItems().forEach((id) => {});
       this.movieService.getMovieById(id).subscribe((data) => {
         this.selectedMovie = data;
         this.aboutMovie = this.selectedMovie.overview;
