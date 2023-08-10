@@ -33,7 +33,7 @@
     *ngIf="couldFind && !loading && searchedMovies; else noMovies"
   >
     <div class="searched-movie-card" *ngFor="let movie of searchedMovies">
-      <div class="searched-movie-card-img" routerLink="/movie/{{ movie.id }}">
+      <div class="searched-movie-card-img" [routerLink]="['/movie', movie.id]">
         <img
           src="https://aeroclub-issoire.fr/wp-content/uploads/2020/05/image-not-found.jpg"
           alt=""
@@ -42,7 +42,7 @@
         <img src="{{ imagePath + movie.poster_path }}" />
       </div>
       <div class="searched-movie-card-detail">
-        <div routerLink="/movie/{{ movie.id }}">
+        <div [routerLink]="['/movie', movie.id]">
           <h3 class="searched-movie-card-title">{{ movie.original_title }}</h3>
         </div>
         <div class="searched-movie-card-infos">
