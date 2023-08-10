@@ -1,11 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-  Renderer2,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { MovieServices } from 'src/app/services/movie.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-search-page',
@@ -14,6 +9,7 @@ import { MovieServices } from 'src/app/services/movie.service';
 })
 export class SearchPageComponent implements OnInit {
   @ViewChild('search') search: any;
+  loading: boolean = false;
   couldFind: boolean = true;
   searchedMovies: any[] = [];
   genres: any[] = [];
@@ -22,7 +18,8 @@ export class SearchPageComponent implements OnInit {
 
   constructor(
     private movieService: MovieServices,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private location: Location
   ) {}
 
   ngAfterViewInit() {
@@ -36,12 +33,14 @@ export class SearchPageComponent implements OnInit {
   }
 
   searchMovie(movieName: string) {
+    this.loading = true;
     this.movieService.searchMovie(movieName).subscribe((result) => {
       this.searchedMovies = result.results;
       this.couldFind = true;
       if (this.searchedMovies.length == 0) {
         this.couldFind = false;
       }
+      this.loading = false;
     });
   }
 
@@ -51,5 +50,9 @@ export class SearchPageComponent implements OnInit {
 
   getGenreById(id: number) {
     return this.genres.find((genre) => genre.id == id);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

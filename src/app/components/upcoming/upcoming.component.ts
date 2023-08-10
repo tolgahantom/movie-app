@@ -9,13 +9,16 @@ import { MovieServices } from 'src/app/services/movie.service';
 })
 export class UpcomingComponent implements OnInit {
   upComingMovies: Movie[] = [];
+  loading: boolean = false;
   imagePath: string = 'https://image.tmdb.org/t/p/original';
 
   constructor(private movieService: MovieServices) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.movieService.getUpcomingMovies().subscribe((result) => {
       this.upComingMovies = result.results;
+      this.loading = false;
     });
   }
 }

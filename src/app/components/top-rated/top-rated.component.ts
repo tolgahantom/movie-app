@@ -9,13 +9,16 @@ import { MovieServices } from 'src/app/services/movie.service';
 })
 export class TopRatedComponent implements OnInit {
   topRatedMovies: Movie[] = [];
+  loading: boolean = false;
   imagePath: string = 'https://image.tmdb.org/t/p/original';
 
   constructor(private movieService: MovieServices) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.movieService.getTopRatedMovies().subscribe((result) => {
       this.topRatedMovies = result.results;
+      this.loading = false;
     });
   }
 }

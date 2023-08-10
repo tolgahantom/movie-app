@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { MovieServices } from 'src/app/services/movie.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -18,7 +19,8 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    private movieService: MovieServices
+    private movieService: MovieServices,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -56,5 +58,9 @@ export class DetailComponent implements OnInit {
     );
 
     this.inWatchList = false;
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

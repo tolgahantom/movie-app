@@ -1,6 +1,6 @@
 <div class="search-page">
   <div class="search-page-header">
-    <a routerLink="/" class="back-icon">
+    <a class="back-icon" (click)="goBack()">
       <i class="fa-solid fa-arrow-left"></i>
     </a>
 
@@ -22,7 +22,13 @@
     <i class="fa-solid fa-search" (click)="searchMovie(search.value)"></i>
   </div>
 
-  <div class="searched-movies" *ngIf="couldFind; else noMovies">
+  <div class="bootstrap-spinner" *ngIf="loading">
+    <div class="spinner-border text-primary mt-4" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="searched-movies" *ngIf="couldFind && !loading; else noMovies">
     <div class="searched-movie-card" *ngFor="let movie of searchedMovies">
       <div class="searched-movie-card-img" routerLink="/movie/{{ movie.id }}">
         <img

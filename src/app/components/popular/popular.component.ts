@@ -9,13 +9,16 @@ import { MovieServices } from 'src/app/services/movie.service';
 })
 export class PopularComponent implements OnInit {
   populerMovies: Movie[] = [];
+  loading: boolean = false;
   imagePath: string = 'https://image.tmdb.org/t/p/original';
 
   constructor(private movieService: MovieServices) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.movieService.getPopularMovies().subscribe((response) => {
       this.populerMovies = response.results;
+      this.loading = false;
     });
   }
 }

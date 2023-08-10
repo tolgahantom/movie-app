@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { MovieServices } from 'src/app/services/movie.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-watch-list',
@@ -11,7 +12,10 @@ export class WatchListComponent implements OnInit {
   watchList: Movie[] = [];
   imagePath: string = 'https://image.tmdb.org/t/p/original';
 
-  constructor(private movieService: MovieServices) {}
+  constructor(
+    private movieService: MovieServices,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.movieService.getWatchlistItems().forEach((movieId) => {
@@ -27,5 +31,9 @@ export class WatchListComponent implements OnInit {
 
   findGenre(id: any) {
     return id.name;
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
