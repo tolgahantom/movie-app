@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { MovieServices } from 'src/app/services/movie.service';
 import { Location } from '@angular/common';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-detail',
@@ -20,7 +21,7 @@ export class DetailComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private movieService: MovieServices,
-    private location: Location
+    private navigate: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +62,6 @@ export class DetailComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    this.navigate.goBack();
   }
 }

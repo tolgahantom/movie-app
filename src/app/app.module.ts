@@ -17,6 +17,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { CastComponent } from './components/cast/cast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationService } from './services/navigation.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CastComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

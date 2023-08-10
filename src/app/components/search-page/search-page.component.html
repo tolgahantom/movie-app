@@ -28,7 +28,10 @@
     </div>
   </div>
 
-  <div class="searched-movies" *ngIf="couldFind && !loading; else noMovies">
+  <div
+    class="searched-movies"
+    *ngIf="couldFind && !loading && searchedMovies; else noMovies"
+  >
     <div class="searched-movie-card" *ngFor="let movie of searchedMovies">
       <div class="searched-movie-card-img" routerLink="/movie/{{ movie.id }}">
         <img

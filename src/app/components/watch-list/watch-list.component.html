@@ -7,9 +7,9 @@
     <p class="watch-title">Watch List</p>
   </div>
 
-  <div class="watch-movies" *ngIf="watchList.length > 0">
+  <div class="watch-movies" *ngIf="watchList.length > 0 && watchList">
     <div class="watch-movie-card" *ngFor="let movie of watchList">
-      <div class="watch-movie-card-img" routerLink="/movie/{{ movie.id }}">
+      <div class="watch-movie-card-img" routerLink="/movie/{{ movie!.id }}">
         <img src="{{ imagePath + movie.poster_path }}" />
       </div>
       <div class="watch-movie-card-detail">

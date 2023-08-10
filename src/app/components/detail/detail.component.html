@@ -7,7 +7,7 @@
     <p class="search-title">Detail</p>
 
     <a
-      (click)="addToWatchList(selectedMovie.id)"
+      (click)="addToWatchList(selectedMovie!.id)"
       class="watch-list-icon"
       *ngIf="!inWatchList"
     >
@@ -16,18 +16,15 @@
 
     <a
       class="watch-list-icon"
-      (click)="removeFromWatchList(selectedMovie.id)"
+      (click)="removeFromWatchList(selectedMovie!.id)"
       *ngIf="inWatchList"
     >
       <i class="fa-solid fa-bookmark"></i>
     </a>
   </div>
-  <div class="detail-banner">
-    <div class="detail-background-image">
-      <img
-        src="{{ imagePath + selectedMovie.backdrop_path }}"
-        *ngIf="selectedMovie.backdrop_path"
-      />
+  <div class="detail-banner" *ngIf="selectedMovie">
+    <div class="detail-background-image" *ngIf="selectedMovie.backdrop_path">
+      <img src="{{ imagePath + selectedMovie.backdrop_path }}" />
     </div>
     <div class="detail-movie-profile container">
       <div class="detail-movie-profile-img">
@@ -63,21 +60,21 @@
       [routerLinkActiveOptions]="{ exact: true }"
     >
       <a
-        routerLink="/movie/{{ selectedMovie.id }}/"
+        routerLink="/movie/{{ selectedMovie!.id }}/"
         class="detail-component-link"
         >About Movie</a
       >
     </li>
     <li class="detail-component-item" routerLinkActive="active">
       <a
-        routerLink="/movie/{{ selectedMovie.id }}/reviews"
+        routerLink="/movie/{{ selectedMovie!.id }}/reviews"
         class="detail-component-link"
         >Reviews</a
       >
     </li>
     <li class="detail-component-item" routerLinkActive="active">
       <a
-        routerLink="/movie/{{ selectedMovie.id }}/cast"
+        routerLink="/movie/{{ selectedMovie!.id }}/cast"
         class="detail-component-link"
         >Cast</a
       >

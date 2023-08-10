@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { MovieServices } from 'src/app/services/movie.service';
 import { Location } from '@angular/common';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-watch-list',
@@ -14,7 +15,7 @@ export class WatchListComponent implements OnInit {
 
   constructor(
     private movieService: MovieServices,
-    private location: Location
+    private navigate: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +35,6 @@ export class WatchListComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    this.navigate.goBack();
   }
 }

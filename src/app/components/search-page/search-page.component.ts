@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { MovieServices } from 'src/app/services/movie.service';
-import { Location } from '@angular/common';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-search-page',
@@ -19,7 +19,7 @@ export class SearchPageComponent implements OnInit {
   constructor(
     private movieService: MovieServices,
     private renderer: Renderer2,
-    private location: Location
+    private navigate: NavigationService
   ) {}
 
   ngAfterViewInit() {
@@ -53,6 +53,6 @@ export class SearchPageComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    this.navigate.goBack();
   }
 }
