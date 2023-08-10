@@ -35,3 +35,17 @@
     font-size: 20px;
   }
 }
+
+@media (min-width: 1200px) {
+  .bottom-nav {
+    border-top: 4px solid #167caf;
+  }
+
+  .icons {
+    padding: 0 40px;
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}

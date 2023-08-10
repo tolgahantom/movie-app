@@ -25,7 +25,7 @@
 }
 
 .search-bar #search::placeholder {
-  color: var(--light);
+  color: #fff;
 }
 
 .search-page-header {
@@ -144,5 +144,71 @@
 
   .searched-movie-card-img {
     height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-page {
+    padding: 20px 30px;
+    padding-bottom: 120px;
+  }
+
+  .search-bar {
+    font-size: 22px;
+  }
+
+  .search-page-header {
+    font-size: 22px;
+  }
+
+  .info-icon {
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+  }
+
+  .searched-movies {
+    margin-top: 30px;
+  }
+
+  .searched-movie-card {
+    font-size: 15px;
+    margin-top: 18px;
+  }
+
+  .searched-movie-card-title {
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .searched-movie-card-img {
+    width: 45%;
+    height: 450px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .searched-movie-card-detail {
+    width: 50%;
+  }
+
+  .searched-movie-card-info {
+    margin-top: 10px;
+  }
+
+  .searched-movie-card-info p {
+    margin-left: 8px;
+  }
+
+  .noMovies-icon {
+    font-size: 100px;
+  }
+
+  .noMovies-title {
+    font-size: 30px;
+  }
+
+  .noMovies-subtitle {
+    font-size: 19px;
   }
 }

@@ -127,3 +127,60 @@
     font-size: 16px;
   }
 }
+
+@media (min-width: 1200px) {
+  .detail-page {
+    padding-bottom: 120px;
+  }
+
+  .container {
+    padding: 20px 30px;
+  }
+
+  .detail-page-header {
+    height: 100px;
+  }
+
+  .detail-components {
+    font-size: 20px;
+    padding: 20px 80px;
+  }
+
+  .detail-banner {
+    height: 600px;
+  }
+
+  .detail-background-image {
+    height: 80%;
+  }
+
+  .detail-movie-profile {
+    bottom: 50px;
+    width: 100%;
+  }
+
+  .detail-movie-profile-img {
+    width: 40%;
+    height: 350px;
+  }
+
+  .detail-movie-profile-img img {
+    object-fit: fill;
+  }
+
+  .detail-movie-profile-title {
+    margin-left: 10px;
+  }
+
+  .detail-movie-infos {
+    font-size: 16px;
+  }
+
+  .detail-movie-info p {
+    margin-left: 10px;
+  }
+
+  .watch-list-icon {
+    cursor: pointer;
+  }
+}

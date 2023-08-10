@@ -60,3 +60,24 @@
     height: 200px;
   }
 }
+
+@media (min-width: 1200px) {
+  .now-playing-page {
+    padding: 20px 30px;
+  }
+
+  .movies {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .movie-card {
+    cursor: pointer;
+    height: 350px;
+    border-radius: 20px;
+  }
+
+  .movie-card-detail {
+    font-size: 18px;
+  }
+}

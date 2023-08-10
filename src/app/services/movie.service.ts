@@ -62,10 +62,6 @@ export class MovieServices {
     );
   }
 
-  saveToLS() {
-    localStorage.setItem('MyWatchList', JSON.stringify(this.myWatchList));
-  }
-
   addToWatchList(id: number) {
     this.myWatchList.push(id);
     this.saveToLS();
@@ -74,6 +70,10 @@ export class MovieServices {
   removeFromWatchlist(index: number) {
     this.myWatchList.splice(index, 1);
     this.saveToLS();
+  }
+
+  saveToLS() {
+    localStorage.setItem('MyWatchList', JSON.stringify(this.myWatchList));
   }
 
   getWatchlistItems() {

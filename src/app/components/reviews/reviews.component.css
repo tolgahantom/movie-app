@@ -67,3 +67,23 @@
     max-width: 100%;
   }
 }
+
+@media (min-width: 1200px) {
+  .review-point {
+    font-size: 25px;
+  }
+
+  .review-pp {
+    width: 150px;
+    height: 150px;
+  }
+
+  .review-name {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .review-comment {
+    font-size: 18px;
+  }
+}
