@@ -1,5 +1,11 @@
 <div class="reviews-page">
-  <div class="reviews" *ngIf="reviews.length > 0; else noReviews">
+  <div class="bootstrap-spinner" *ngIf="loading">
+    <div class="spinner-border text-primary mt-4" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="reviews" *ngIf="reviews.length > 0 && !loading; else noReviews">
     <div class="review" *ngFor="let review of reviews">
       <div class="reviewer">
         <div class="review-pp">
